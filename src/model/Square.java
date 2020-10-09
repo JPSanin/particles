@@ -1,6 +1,7 @@
 package model;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public class Square extends Shape{
 
@@ -11,7 +12,11 @@ public class Square extends Shape{
 
 	@Override
 	public void draw() {
-		
+		getApp().fill(getColors()[0],getColors()[1],getColors()[2]);
+		getApp().noStroke();
+		getApp().rectMode(PConstants.CENTER);
+		getApp().rect(getPosX(), getPosY(), getSize(), getSize());
+
 		
 	}
 

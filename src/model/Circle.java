@@ -12,7 +12,9 @@ public class Circle extends Shape{
 
 	@Override
 	public void draw() {
-			
+		getApp().fill(getColors()[0],getColors()[1],getColors()[2]);
+		getApp().noStroke();
+		getApp().ellipse(getPosX(), getPosY(), getSize(), getSize());	
 	}
 	
 	

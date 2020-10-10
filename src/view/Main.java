@@ -33,7 +33,20 @@ public class Main extends PApplet {
 	}
 	
 	public void mousePressed() {
-		
+		 if (mouseButton == LEFT) {
+			 for (int i = 0; i <controller.getShapes().size() ; i++) {
+				 if(mouseX>controller.getShapes().get(i).getPosX()-(controller.getShapes().get(i).getSize()/2)
+					&&	mouseX<controller.getShapes().get(i).getPosX()+(controller.getShapes().get(i).getSize()/2) 
+					&&	mouseY>controller.getShapes().get(i).getPosY()-(controller.getShapes().get(i).getSize()/2)
+					&&	mouseY<controller.getShapes().get(i).getPosY()+(controller.getShapes().get(i).getSize()/2)) {
+					 controller.getShapes().get(i).setStop(true);
+					  }
+			}
+			
+		} else if (mouseButton == RIGHT) {
+			   
+			    //crear nueva figura aleatoria
+		}
 	}
 
 }

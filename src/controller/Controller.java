@@ -78,7 +78,12 @@ public class Controller {
 		
 	}
 	
-	public void switchDir() {
+	public void switchDir(int index1, int index2) {
+		int newDir1=shapes.get(index1).getDir()*-1;
+		shapes.get(index1).setDir(newDir1);
+		
+		int newDir2=shapes.get(index2).getDir()*-1;
+		shapes.get(index2).setDir(newDir2);
 		
 	}
 	

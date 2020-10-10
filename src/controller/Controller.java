@@ -101,6 +101,7 @@ public class Controller {
 	public void switchDir(Shape s1) {
 		int newDir1=s1.getDir()*-1;
 		s1.setDir(newDir1);
+	
 	}
 	
 	

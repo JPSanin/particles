@@ -21,7 +21,6 @@ public class Main extends PApplet {
 		input=loadStrings("data/input.txt");
 		controller=new Controller(input,this);
 		controller.createInitialShapes();
-	
 		
 	}
 	
@@ -39,6 +38,7 @@ public class Main extends PApplet {
 				
 			}
 		}
+		
 		
 	}
 	
@@ -61,7 +61,7 @@ public class Main extends PApplet {
 	public void checkHit(Shape s1, Shape s2) {
 		int realSize=s1.getSize()/2;
 		int realSize2=s2.getSize()/2;
-
+		
 		if(dist(s1.getPosX(), s1.getPosY(), s2.getPosX(),s2.getPosY())<=realSize+realSize2) {
 			
 			controller.switchDir(s1);

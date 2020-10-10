@@ -1,6 +1,7 @@
 package view;
 
 import controller.Controller;
+import model.Shape;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
@@ -47,5 +48,10 @@ public class Main extends PApplet {
 			    controller.createShape();
 		}
 	}
-
+	
+	public void checkHit(Shape s1, Shape s2) {
+		if(dist(s1.getPosX(), s1.getPosY(), s2.getPosX(),s2.getPosY())<s1.getSize()/2+s2.getSize()/2) {
+			controller.switchDir(s1, s2);
+		}
+	}
 }

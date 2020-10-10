@@ -44,8 +44,7 @@ public class Main extends PApplet {
 			}
 			
 		} else if (mouseButton == RIGHT) {
-			   
-			    //crear nueva figura aleatoria
+			    controller.createShape();
 		}
 	}
 

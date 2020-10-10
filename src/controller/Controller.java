@@ -54,6 +54,27 @@ public class Controller {
 	}
 	
 	public void createShape() {
+		int[] colors= new int[3];
+		colors[0]=(int)app.random(0, 255);
+		colors[1]=(int)app.random(0, 255);
+		colors[2]=(int)app.random(0, 255);
+		int size=(int)app.random(30, 80);
+		int posX=(int)app.random(80, 720);
+		int posY=(int)app.random(80, 520);
+		int dir=(int)app.random(2);
+		if(dir==0) {
+			dir=-1;
+		}
+		int shape=(int)app.random(2);
+		
+		if(shape==0) {
+			Circle c= new Circle(size, posX,posY , dir, colors, app);
+			shapes.add(c);
+		}
+		if(shape==1) {
+			Square s= new Square(size, posX,posY , dir, colors, app);
+			shapes.add(s);
+		}
 		
 	}
 	

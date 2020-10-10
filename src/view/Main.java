@@ -18,15 +18,17 @@ public class Main extends PApplet {
 	}
 	public void setup() {
 		input=loadStrings("data/input.txt");
-		Controller controller=new Controller(input,this);
+		controller=new Controller(input,this);
 		controller.createInitialShapes();
+		
 	}
 	
 
 	
 	public void draw() {
 		background(0);
-		
+		controller.drawShapes();
+		controller.moveShapes();
 		
 	}
 	

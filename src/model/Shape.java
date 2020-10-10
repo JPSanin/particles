@@ -23,7 +23,25 @@ public abstract class Shape {
 		this.app = app;
 		stop=false;
 	}
-	public void move() {}
+	public void move() {
+		if(stop==false) {
+			if(dir==-1) {
+				posY-=2;
+				if(posY-size/2<0) {
+					posY=600;
+				}
+			}
+			
+			if(dir==1) {
+				posY+=2;
+				if(posY+size/2>600) {
+					posY=0;
+				}
+			}
+			
+		}
+		
+	}
 	public abstract void draw();
 
 

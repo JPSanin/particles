@@ -27,14 +27,14 @@ public abstract class Shape {
 		if(stop==false) {
 			if(dir==-1) {
 				posY-=2;
-				if(posY-size/2<0) {
+				if(posY<0) {
 					posY=600;
 				}
 			}
 			
 			if(dir==1) {
 				posY+=2;
-				if(posY+size/2>600) {
+				if(posY>600) {
 					posY=0;
 				}
 			}

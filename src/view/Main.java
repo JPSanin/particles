@@ -34,7 +34,6 @@ public class Main extends PApplet {
 		for(int i =0; i<controller.getShapes().size();i++) {
 			for(int j =0; j<controller.getShapes().size();j++) {
 				if(i!=j) {
-		
 					checkHit(controller.getShapes().get(i),controller.getShapes().get(j));
 				}
 				
@@ -60,11 +59,13 @@ public class Main extends PApplet {
 	}
 	
 	public void checkHit(Shape s1, Shape s2) {
+		int realSize=s1.getSize()/2;
+		int realSize2=s2.getSize()/2;
 
-		if(dist(s1.getPosX(), s1.getPosY(), s2.getPosX(),s2.getPosY())<s1.getSize()/2+s2.getSize()/2) {
+		if(dist(s1.getPosX(), s1.getPosY(), s2.getPosX(),s2.getPosY())<=realSize+realSize2) {
 			
 			controller.switchDir(s1);
-			System.out.println("yes");
+
 		
 		}
 	}

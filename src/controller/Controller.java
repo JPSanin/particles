@@ -54,13 +54,33 @@ public class Controller {
 	}
 	
 	public void createShape() {
+		boolean failed=false;
+		int size;
+		int posX;
+		int posY;
 		int[] colors= new int[3];
 		colors[0]=(int)app.random(0, 255);
 		colors[1]=(int)app.random(0, 255);
 		colors[2]=(int)app.random(0, 255);
-		int size=(int)app.random(30, 80);
-		int posX=(int)app.random(80, 720);
-		int posY=(int)app.random(80, 520);
+		
+		do {
+			
+			int ranSize=(int)app.random(30, 80);
+			int ranPosX=(int)app.random(80, 720);
+			int ranPosY=(int)app.random(80, 520);
+			failed=false;
+			for(int i=0; i<shapes.size() && failed==false;i++) {
+				if(PApplet.dist(shapes.get(i).getPosX(),shapes.get(i).getPosY(), ranPosX,ranPosY)<=shapes.get(i).getSize()/2+ranSize/2) {
+				failed=true;	
+				}
+			}
+			size=ranSize;
+			posX=ranPosX;
+			posY=ranPosY;
+		}while(failed==true);
+		
+		
+		
 		int dir=(int)app.random(2);
 		if(dir==0) {
 			dir=-1;

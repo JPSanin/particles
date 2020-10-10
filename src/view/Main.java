@@ -30,6 +30,14 @@ public class Main extends PApplet {
 		background(0);
 		controller.drawShapes();
 		controller.moveShapes();
+		for(int i =0; i<controller.getShapes().size();i++) {
+			for(int j =0; j<controller.getShapes().size();j++) {
+				if(i!=j) {
+					checkHit(controller.getShapes().get(i),controller.getShapes().get(j));
+				}
+				
+			}
+		}
 		
 	}
 	
@@ -50,8 +58,12 @@ public class Main extends PApplet {
 	}
 	
 	public void checkHit(Shape s1, Shape s2) {
+		//System.out.println(dist(s1.getPosX(), s1.getPosY(), s2.getPosX(),s2.getPosY()));
+		//System.out.println(s1.getSize()/2+s2.getSize()/2);
 		if(dist(s1.getPosX(), s1.getPosY(), s2.getPosX(),s2.getPosY())<s1.getSize()/2+s2.getSize()/2) {
 			controller.switchDir(s1, s2);
+			System.out.println("yes");
+			
 		}
 	}
 }
